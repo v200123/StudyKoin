@@ -1,0 +1,5 @@
+include ':mylibrary'
+include ':mybasektx'
+includeBuild 'versionplugin'
+include ':app'
+rootProject.name = "koin"

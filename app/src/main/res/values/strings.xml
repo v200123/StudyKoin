@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">koin</string>
+    <string name="channel_name">测试</string>
+    <string name="channel_description">测试</string>
+</resources>

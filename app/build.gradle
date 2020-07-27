@@ -1,0 +1,75 @@
+import com.lc.versionplugin.VersionControllor
+
+plugins {
+    id "com.lc.plugin"
+}
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "29.0.3"
+    dataBinding {
+        enabled = true
+    }
+    defaultConfig {
+        applicationId "com.lc.koin"
+        minSdkVersion 23
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+gradle.addBuildListener(new BuildListener() {
+    void buildStarted(Gradle var1) { println '开始构建' }
+
+    void settingsEvaluated(Settings var1) {
+        // var1.gradle.rootProject 这里访问 Project 对象时会报错，        // 因为还未完成 Project 的初始化。
+        println 'settings 评估完成（settings.gradle 中代码执行完毕）'
+    }
+
+    void projectsLoaded(Gradle var1) {
+        println '项目结构加载完成（初始化阶段结束）'
+        println '初始化结束，可访问根项目：' + var1.gradle.rootProject
+    }
+
+    void projectsEvaluated(Gradle var1) { println '所有项目评估完成（配置阶段结束）' }
+
+    void buildFinished(BuildResult var1) { println '构建结束 ' }
+})
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation VersionControllor.AndroidX.ktxCore
+    implementation VersionControllor.AndroidX.appCompat
+    implementation VersionControllor.AndroidX.constraintlayout
+    implementation files('libs\\com.heytap.msp.aar')
+    implementation project(path: ':mylibrary')
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    implementation VersionControllor.koin.koinAndroid
+    implementation VersionControllor.dependance.BRAVH
+//    implementation VersionControllor.oppo.oppoPush
+    implementation VersionControllor.koin.koinAndroidxViewmodel
+    implementation VersionControllor.koin.koinExt
+    implementation VersionControllor.dependance.RETROFIT
+    implementation VersionControllor.dependance.MOSHI
+    implementation 'com.gyf.immersionbar:immersionbar:3.0.0'
+    implementation 'com.gyf.immersionbar:immersionbar-ktx:3.0.0'
+
+}
