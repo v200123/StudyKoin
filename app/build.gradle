@@ -3,10 +3,18 @@ import com.lc.versionplugin.VersionControllor
 plugins {
     id "com.lc.plugin"
 }
+
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
+kapt {
+    useBuildCache = true
+    javacOptions {
+        option("-Xmaxerrs", 500)
+    }
+}
 
 android {
     compileSdkVersion 30
@@ -29,6 +37,10 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 
@@ -63,13 +75,15 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
     implementation VersionControllor.koin.koinAndroid
+    implementation VersionControllor.AndroidX.coroutines
     implementation VersionControllor.dependance.BRAVH
 //    implementation VersionControllor.oppo.oppoPush
     implementation VersionControllor.koin.koinAndroidxViewmodel
     implementation VersionControllor.koin.koinExt
     implementation VersionControllor.dependance.RETROFIT
     implementation VersionControllor.dependance.MOSHI
+    implementation VersionControllor.dependance.MOSHI02
     implementation 'com.gyf.immersionbar:immersionbar:3.0.0'
     implementation 'com.gyf.immersionbar:immersionbar-ktx:3.0.0'
-
+    kapt 'com.squareup.moshi:moshi-kotlin-codegen:1.9.3'
 }

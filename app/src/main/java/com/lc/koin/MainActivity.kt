@@ -13,13 +13,19 @@ import com.gyf.immersionbar.ktx.immersionBar
 import com.heytap.msp.push.HeytapPushManager
 import com.heytap.msp.push.callback.ICallBackResultService
 import com.lc.koin.bean.testBean
+import com.lc.koin.http.getHttpClient
 import com.lc.mylibrary.dOut
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.launch
 import org.koin.android.ext.android.inject
 import org.koin.androidx.scope.lifecycleScope
 import org.koin.core.context.GlobalContext
 import org.koin.core.parameter.parametersOf
 import org.koin.experimental.property.inject
+import retrofit2.HttpException
 import kotlin.coroutines.CoroutineContext
 
 class MainActivity : AppCompatActivity() {
@@ -37,7 +43,18 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initVersion() {
-        lifecycleScope
+        GlobalScope.launch(Dispatchers.IO){
+            try {
+                val version = getHttpClient().getVersion(
+                    "5deda82523389f22fc89c173",
+                    "fcaec245880ec87ca80742ea4e0caed61"
+                )
+                version.toString().dOut()
+            }catch (e:HttpException){
+                e.message().dOut()
+            }
+
+        }
     }
 
     private fun initChannel() {

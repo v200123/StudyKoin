@@ -10,7 +10,7 @@ import com.squareup.moshi.Json
  *@description  描述文件
  */
 @JsonClass(generateAdapter = true)
-class FirVersionBean(
+ data class FirVersionBean(
     @Json(name = "binary")
     var mBinary: Binary = Binary(),
     @Json(name = "build")

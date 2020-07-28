@@ -10,5 +10,5 @@ import retrofit2.converter.moshi.MoshiConverterFactory
  */
 fun getHttpClient():FirApiInterface=
 
-    Retrofit.Builder().baseUrl("http://api.bq04.com/").addConverterFactory(MoshiConverterFactory.create()).build().create(FirApiInterface::class.java)
+    Retrofit.Builder().baseUrl("https://api.bq04.com/").addConverterFactory(MoshiConverterFactory.create()).build().create(FirApiInterface::class.java)
 

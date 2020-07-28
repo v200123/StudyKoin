@@ -24,6 +24,8 @@ private object version{
     val oppoVersion = "2.0.2"
     val BRAVHVersion = "3.0.4"
     val RETROFITVersion = "2.9.0"
+    val coroutinesVersion = "1.3.8"
+    val moshiVersion = "1.9.3"
 
 }
 
@@ -31,6 +33,7 @@ private object version{
      val appCompat = "androidx.appcompat:appcompat:${appCompatVersion}"
      val constraintlayout = "androidx.constraintlayout:constraintlayout:$constraintlayoutVersion"
      val ktxCore = "androidx.core:core-ktx:${version.ktxCoretVersion}"
+     val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${version.coroutinesVersion}"
  }
 
     object koin{
@@ -42,6 +45,7 @@ private object version{
         val BRAVH = "com.github.CymChad:BaseRecyclerViewAdapterHelper:${version.BRAVHVersion}"
         val RETROFIT = "com.squareup.retrofit2:retrofit:${version.RETROFITVersion}"
         val MOSHI= "com.squareup.retrofit2:converter-moshi:${version.RETROFITVersion}"
+        val MOSHI02= "com.squareup.moshi:moshi-kotlin:${version.moshiVersion}"
     }
 
     object oppo{
