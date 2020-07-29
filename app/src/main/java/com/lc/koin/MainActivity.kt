@@ -14,6 +14,7 @@ import com.heytap.msp.push.HeytapPushManager
 import com.heytap.msp.push.callback.ICallBackResultService
 import com.lc.koin.bean.testBean
 import com.lc.koin.http.getHttpClient
+import com.lc.mylibrary.checkStorageModel
 import com.lc.mylibrary.dOut
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.Dispatchers
@@ -43,18 +44,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initVersion() {
-        GlobalScope.launch(Dispatchers.IO){
-            try {
-                val version = getHttpClient().getVersion(
-                    "5deda82523389f22fc89c173",
-                    "fcaec245880ec87ca80742ea4e0caed61"
-                )
-                version.toString().dOut()
-            }catch (e:HttpException){
-                e.message().dOut()
-            }
-
-        }
+        "当前的存储运行状态${checkStorageModel()}".dOut()
     }
 
     private fun initChannel() {

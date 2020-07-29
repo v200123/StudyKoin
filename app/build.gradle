@@ -42,6 +42,11 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
 }
 
 gradle.addBuildListener(new BuildListener() {
@@ -65,11 +70,14 @@ gradle.addBuildListener(new BuildListener() {
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation VersionControllor.AndroidX.ktxCore
+    implementation VersionControllor.Ktx.ktxCore
+    implementation VersionControllor.Ktx.fragmentKtx
     implementation VersionControllor.AndroidX.appCompat
     implementation VersionControllor.AndroidX.constraintlayout
     implementation files('libs\\com.heytap.msp.aar')
     implementation project(path: ':mylibrary')
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.0'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
@@ -80,9 +88,13 @@ dependencies {
 //    implementation VersionControllor.oppo.oppoPush
     implementation VersionControllor.koin.koinAndroidxViewmodel
     implementation VersionControllor.koin.koinExt
+    implementation VersionControllor.AndroidX.viewmodelSavedstate
     implementation VersionControllor.dependance.RETROFIT
     implementation VersionControllor.dependance.MOSHI
     implementation VersionControllor.dependance.MOSHI02
+    implementation VersionControllor.dependance.TOASTY
+    implementation VersionControllor.dependance.MMKV
+    implementation VersionControllor.dependance.FILE
     implementation 'com.gyf.immersionbar:immersionbar:3.0.0'
     implementation 'com.gyf.immersionbar:immersionbar-ktx:3.0.0'
     kapt 'com.squareup.moshi:moshi-kotlin-codegen:1.9.3'

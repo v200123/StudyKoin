@@ -26,14 +26,20 @@ private object version{
     val RETROFITVersion = "2.9.0"
     val coroutinesVersion = "1.3.8"
     val moshiVersion = "1.9.3"
+    val fragmentKtxVersion = "1.2.5"
+    val viewModelKtxVersion = "1.2.5"
+    val lifecycleVersion = "2.2.0"
+    val toastyVersion = "1.4.2"
+    val mmkvVersion = "1.2.1"
+    val fileVersion = "1.0.2"
 
 }
 
  object AndroidX {
      val appCompat = "androidx.appcompat:appcompat:${appCompatVersion}"
      val constraintlayout = "androidx.constraintlayout:constraintlayout:$constraintlayoutVersion"
-     val ktxCore = "androidx.core:core-ktx:${version.ktxCoretVersion}"
      val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${version.coroutinesVersion}"
+     val viewmodelSavedstate = "androidx.lifecycle:lifecycle-viewmodel-savedstate:${version.lifecycleVersion}"
  }
 
     object koin{
@@ -46,10 +52,19 @@ private object version{
         val RETROFIT = "com.squareup.retrofit2:retrofit:${version.RETROFITVersion}"
         val MOSHI= "com.squareup.retrofit2:converter-moshi:${version.RETROFITVersion}"
         val MOSHI02= "com.squareup.moshi:moshi-kotlin:${version.moshiVersion}"
+        val TOASTY= "com.github.GrenderG:Toasty:${version.toastyVersion}"
+        val MMKV= "com.tencent:mmkv-static:${version.mmkvVersion}"
+//        文件选择器
+        val FILE= "com.sky.filePicker:filePicker:${version.fileVersion}"
     }
 
     object oppo{
         val oppoPush = "com.heytap.mcssdk:mcssdk:${version.oppoVersion}"
     }
 
+    object Ktx{
+        val fragmentKtx = "androidx.fragment:fragment-ktx:${version.fragmentKtxVersion}"
+        val ktxCore = "androidx.core:core-ktx:${version.ktxCoretVersion}"
+        val viewmodelKtx = "androidx.lifecycle:lifecycle-viewmodel-ktx::${version.viewModelKtxVersion}"
+    }
 }
