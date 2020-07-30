@@ -4,6 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import com.lc.koin.base.ApiException
 import com.lc.koin.base.BaseRepository
 import com.lc.koin.bean.FirVersionBean
+import com.lc.koin.bean.PreFIrUploadModel
 import com.lc.koin.http.getHttpClient
 import com.tencent.mmkv.MMKV
 import kotlinx.coroutines.CoroutineScope
@@ -27,6 +28,18 @@ class firLoadRep(coroutineScope: CoroutineScope, errorLiveData: MutableLiveData<
             }
         )
     }
+
+    fun getPreInfo( apiToken: String, versionBean: MutableLiveData<PreFIrUploadModel>){
+        launch(
+            block = {
+                getHttpClient().getUploadToken( Token = apiToken,bundle_id = "1")
+            },success = {
+                versionBean.postValue(it)
+            }
+        )
+    }
+
+    fun uploadImage(imageUrl:String,)
 
     fun getId()=
         if (mKey.containsKey(KEY_FIR_ID))

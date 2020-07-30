@@ -18,6 +18,7 @@ import com.sky.filepicker.upload.LocalUpdateActivity
 import com.tencent.mmkv.MMKV
 import kotlinx.android.synthetic.main.dialog_fir_intput.*
 import kotlinx.android.synthetic.main.fragment_fir_load.*
+import java.io.File
 
 /**
  *@author LC
@@ -46,6 +47,13 @@ class firUpLoadFragment : Fragment(R.layout.fragment_fir_load) {
 应用的下载地址是:${it.mNewInstallUrl}""".trimMargin()
         })
 
+        mfirViewModel.mPreData.observe(this, Observer {
+            it.dOut()
+            startActivityForResult(Intent(Intent.ACTION_GET_CONTENT).apply {
+            setType("*/*")
+            putExtra(Intent.EXTRA_ALLOW_MULTIPLE, false)
+            addCategory(Intent.CATEGORY_OPENABLE)
+        }, 400) })
     }
 
     private fun initArgumentCheck() {
@@ -69,11 +77,8 @@ class firUpLoadFragment : Fragment(R.layout.fragment_fir_load) {
             )
         }
         button2.setOnClickListener {
-              startActivityForResult(Intent(Intent.ACTION_GET_CONTENT).apply {
-                  setType("*/*")
-                  putExtra(Intent.EXTRA_ALLOW_MULTIPLE, false)
-                  addCategory(Intent.CATEGORY_OPENABLE)
-              }, 400)
+            mfirViewModel.getPreInfo()
+
         }
     }
 
@@ -81,7 +86,7 @@ class firUpLoadFragment : Fragment(R.layout.fragment_fir_load) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode ==400 ) {
             val data1 = data!!.data
-            mContext.contentResolver.openFileDescriptor(data1!!,"r")
+            val openFileDescriptor = mContext.contentResolver.openFileDescriptor(data1!!, "r")
         }
     }
 }

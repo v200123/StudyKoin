@@ -1,9 +1,9 @@
 package com.lc.koin.http
 
 import com.lc.koin.bean.FirVersionBean
-import retrofit2.http.GET
-import retrofit2.http.Path
-import retrofit2.http.Query
+import com.lc.koin.bean.PreFIrUploadModel
+import okhttp3.MultipartBody
+import retrofit2.http.*
 
 /**
  *@author LC
@@ -13,4 +13,10 @@ import retrofit2.http.Query
 interface FirApiInterface {
     @GET("apps/latest/{id}")
    suspend fun getVersion(@Path("id")id:String,@Query("api_token")api_token:String):FirVersionBean
+
+    @POST("apps")
+    suspend fun getUploadToken(@Query("type")type:String = "android",@Query("api_token")Token:String,@Query("bundle_id")bundle_id:String):PreFIrUploadModel
+    @Multipart
+    @POST
+    suspend fun uploadIcon(@Url url:String,@Query("key")key:String,@Query("token")token:String,@Part image:MultipartBody.Part)
 }
