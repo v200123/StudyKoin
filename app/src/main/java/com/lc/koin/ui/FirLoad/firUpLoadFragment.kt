@@ -1,5 +1,6 @@
 package com.lc.koin.ui.FirLoad
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -25,6 +26,11 @@ import kotlinx.android.synthetic.main.fragment_fir_load.*
  */
 class firUpLoadFragment : Fragment(R.layout.fragment_fir_load) {
     private val mfirViewModel by viewModels<firViewModel>()
+    private lateinit var mContext: Context
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        mContext = context
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         initArgumentCheck()
@@ -75,7 +81,7 @@ class firUpLoadFragment : Fragment(R.layout.fragment_fir_load) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode ==400 ) {
             val data1 = data!!.data
-
+            mContext.contentResolver.openFileDescriptor(data1!!,"r")
         }
     }
 }
