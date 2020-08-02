@@ -1,3 +1,4 @@
+include ':basemvvm'
 include ':mylibrary'
 include ':mybasektx'
 includeBuild 'versionplugin'

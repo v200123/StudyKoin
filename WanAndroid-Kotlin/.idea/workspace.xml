@@ -1,28 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="21512d95-2cdb-4308-972a-c2cce3be29fd" name="Default Changelist" comment="" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <list default="true" id="21512d95-2cdb-4308-972a-c2cce3be29fd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../app/src/main/java/com/lc/koin/ui/StudyContent/ContentFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/src/main/res/layout/fragment_study_content.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mylibrary/src/main/java/com/lc/mylibrary/Coustract.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Jetpack-WanAndroid" beforeDir="false" afterPath="$PROJECT_DIR$/../Jetpack-WanAndroid" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QzsWanAndroid" beforeDir="false" afterPath="$PROJECT_DIR$/../QzsWanAndroid" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WanAndroid" beforeDir="false" afterPath="$PROJECT_DIR$/../WanAndroid" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../XEditText" beforeDir="false" afterPath="$PROJECT_DIR$/../XEditText" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/lc/koin/http/FirApiInterface.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/lc/koin/http/FirApiInterface.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/lc/koin/ui/FirLoad/firLoadRep.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/lc/koin/ui/FirLoad/firLoadRep.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/lc/koin/ui/FirLoad/firUpLoadFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/lc/koin/ui/FirLoad/firUpLoadFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/lc/koin/ui/FirLoad/firViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/lc/koin/ui/FirLoad/firViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/layout/fragment_fir_load.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/res/layout/fragment_fir_load.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/navigation/fir_load_nav.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/res/navigation/fir_load_nav.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mylibrary/src/main/java/com/lc/mylibrary/OtherKtx.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../mylibrary/src/main/java/com/lc/mylibrary/OtherKtx.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vlayout" beforeDir="false" afterPath="$PROJECT_DIR$/../vlayout" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wanandroidbyxiaoyanger0825" beforeDir="false" afterPath="$PROJECT_DIR$/../wanandroidbyxiaoyanger0825" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yslp-android" beforeDir="false" afterPath="$PROJECT_DIR$/../yslp-android" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ProjectId" id="1cDrMgceHNNHcd5dFOOazIezWhr" />
-  <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+  <component name="ProjectId" id="1cDrMgceHNNHcd5dFOOazIezWhr" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="abbreviatePackageNames" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="SvnConfiguration">
     <configuration />

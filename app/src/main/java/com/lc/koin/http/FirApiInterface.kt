@@ -18,5 +18,9 @@ interface FirApiInterface {
     suspend fun getUploadToken(@Query("type")type:String = "android",@Query("api_token")Token:String,@Query("bundle_id")bundle_id:String):PreFIrUploadModel
     @Multipart
     @POST
-    suspend fun uploadIcon(@Url url:String,@Query("key")key:String,@Query("token")token:String,@Part image:MultipartBody.Part)
+    suspend fun uploadIcon(@Url url:String, @Query("key")key:String, @Query("token")token:String, @Query("x:name")name:String?,
+        @Query("x:version")version:String?,
+        @Query("x:build")build:String?,
+        @Query("x:changelog")change:String?
+        , @Part file:MultipartBody.Part)
 }

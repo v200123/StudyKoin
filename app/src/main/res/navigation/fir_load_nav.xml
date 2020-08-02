@@ -5,6 +5,14 @@
 
     <fragment
         android:id="@+id/firUpLoadFragment"
-        android:name="com.lc.koin.ui.FirLoad.firUpLoadFragment"
-        android:label="firUpLoadFragment" />
+        android:name="com.lc.koin.ui.firload.firUpLoadFragment"
+        android:label="firUpLoadFragment" >
+        <action
+            android:id="@+id/action_firUpLoadFragment_to_contentFragment"
+            app:destination="@id/contentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/contentFragment"
+        android:name="com.lc.koin.ui.StudyContent.ContentFragment"
+        android:label="ContentFragment" />
 </navigation>

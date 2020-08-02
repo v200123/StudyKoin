@@ -1,4 +1,4 @@
-package com.lc.koin.ui.FirLoad
+package com.lc.koin.ui.firload
 
 import androidx.lifecycle.MutableLiveData
 import com.lc.koin.base.ApiException
@@ -6,15 +6,20 @@ import com.lc.koin.base.BaseRepository
 import com.lc.koin.bean.FirVersionBean
 import com.lc.koin.bean.PreFIrUploadModel
 import com.lc.koin.http.getHttpClient
+import com.lc.mylibrary.dOut
 import com.tencent.mmkv.MMKV
 import kotlinx.coroutines.CoroutineScope
+import okhttp3.MediaType
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
+import java.io.File
 
 /**
  *@author LC
  *@createTime 2020/7/29 16:32
  *@description  描述文件
  */
-class firLoadRep(coroutineScope: CoroutineScope, errorLiveData: MutableLiveData<ApiException>) :
+class FirLoadRep(coroutineScope: CoroutineScope, errorLiveData: MutableLiveData<ApiException>) :
     BaseRepository(coroutineScope, errorLiveData) {
     private val mKey = MMKV.mmkvWithID("fir")
      val KEY_FIR_ID = "com.koin.firID"
@@ -24,6 +29,7 @@ class firLoadRep(coroutineScope: CoroutineScope, errorLiveData: MutableLiveData<
             block = {
                 getHttpClient().getVersion(id, apiToken)
             },success = {
+                it.dOut()
                 versionBean.postValue(it)
             }
         )
@@ -39,8 +45,19 @@ class firLoadRep(coroutineScope: CoroutineScope, errorLiveData: MutableLiveData<
         )
     }
 
-    fun uploadImage(imageUrl:String,)
+//    fun uploadImage(imageUrl:String,)
 
+    fun uploadFile(url:String,key:String,Token:String,file: File){
+        launch(
+            block = {
+                val create = RequestBody.create(MediaType.parse("multipart/form-data"), file)
+                val createFormData = MultipartBody.Part.createFormData("file", file.name, create)
+                getHttpClient().uploadIcon(url,key,Token,"哈哈","0001","001","使用API上传的APK",createFormData)
+            },success = {
+                
+            }
+        )
+    }
     fun getId()=
         if (mKey.containsKey(KEY_FIR_ID))
         {
